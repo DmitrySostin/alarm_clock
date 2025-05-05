@@ -45,7 +45,7 @@ def main(page: ft.Page):
             page.open(ft.SnackBar(ft.Text(f"Saved")))
             page.update()
 
-            read_alarm()  # Обновляем список будильников
+            read_alarm()                                                    # Обновляем список будильников
 
         except Exception as e:
             page.snack_bar = ft.SnackBar(ft.Text(f"Ошибка: {str(e)}"))
@@ -138,12 +138,12 @@ def main(page: ft.Page):
                                     # Воспроизводим звук
                                     play_sound(melody)
 
-                                    def close_dialog(e):  # Закрываем всплывающее окно и стоп музыка
+                                    def close_dialog(e):                            # Закрываем всплывающее окно и стоп музыка
                                         stop_sound()
                                         dialog.open = False
                                         page.update()
 
-                                    dialog = ft.AlertDialog(  # Всплывающее окно будильник
+                                    dialog = ft.AlertDialog(                        # Всплывающее окно будильник
                                         modal=True,
                                         title=ft.Text("Alarm!"),
                                         content=ft.Text(f"{melody} in {alarm_time}"),
@@ -158,7 +158,6 @@ def main(page: ft.Page):
                 print(f"Ошибка проверки будильников: {e}")
 
             time.sleep(30)
-
     # Элементы интерфейса
     time_display = ft.Text(size=50, color=ft.Colors.GREEN)
     date_display = ft.Text(size=20, color=ft.Colors.GREY_600)
@@ -167,7 +166,7 @@ def main(page: ft.Page):
     clock_container = ft.Container(
         content=ft.Column(
             [time_display, date_display],
-            # alignment="center",                                          #ft.alignment.center,
+            #alignment="center",                                          #ft.alignment.center,
             alignment=ft.MainAxisAlignment.START,
         ),
         padding=50,
@@ -248,7 +247,7 @@ def main(page: ft.Page):
             ft.Divider(height=20),
             save_button
         ],
-        scroll=ft.ScrollMode.ALWAYS
+        scroll = ft.ScrollMode.ALWAYS
     )
 
     # Навигация
